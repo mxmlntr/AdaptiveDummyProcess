@@ -22,7 +22,7 @@ void deserializer::setfilename(string name)
 void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
 {
     filename.erase(filename.length()-5,5);
-    string SHMfilename = "serial"+filename;
+    string SHMfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
 
     // create and open an archive for input
     std::ifstream ifs(SHMfilename);
@@ -37,7 +37,7 @@ void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
 void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
 {
     filename.erase(filename.length()-5 , 5);
-    string binaryfilename = "serial"+filename;
+    string binaryfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
 
     mapped_file_params params;
     params.path          = binaryfilename;
@@ -45,8 +45,8 @@ void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
 
     stream<mapped_file> in(params);
 
-    //boost::archive::binary_iarchive ia(in);
-    boost::archive::text_iarchive ia(in);
+    boost::archive::binary_iarchive ia(in);
+    //boost::archive::text_iarchive ia(in);
 
     ia >> *Data_s;
 };
