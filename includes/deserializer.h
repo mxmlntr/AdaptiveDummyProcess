@@ -27,6 +27,7 @@ public:
     void deserializeStructFromFile(UMGR_s *Data_s);
     void deserializeStructFromSHM(UMGR_s *Data_s);
     void deserializeStructFromFileMemMap(UMGR_s *Data_s);
+    void copyStructFromSHM(UMGR_s *Data_s);
 };
 
 #endif //ADAPTIVEDUMMYPROCESS_DESERIALIZER_H
