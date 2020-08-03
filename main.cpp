@@ -1,7 +1,20 @@
-//
-// Created by visxim on 7/27/20.
-//
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  /home/visxim/CLionProjects/AdaptiveDummyProcess/main.cpp
+ *        \brief  main of the AdaptiveDummyProcess
+ *
+ *      \details
+ *
+ *********************************************************************************************************************/
 
+/**********************************************************************************************************************
+ *  INCLUDES
+ *********************************************************************************************************************/
 #include <iostream>
 #include "message_manager.h"
 #include "deserializer.h"
@@ -9,6 +22,7 @@
 
 #define PRIORITY 1
 
+//! Enum for synchronization via message queue
 enum SyncMsg
 {
     ProcessTimeout = 00,
@@ -21,19 +35,23 @@ enum SyncMsg
     DaemonTimeout = 77
 };
 
+//! Declaration of the objects
 message_manager mesQ;
 deserializer des("UMGR.json");
 checksum_manager crc;
 
-int main()
+int main(int argc, char **argv)
 {
+    //! Create a struct for the received data
     UMGR_s receivedData;
 
+    //! Open the message queue for synchronization
     mesQ.openQUEUE("UMGR.json");
+    //! Notify the daemon that the process is ready for receiption
     mesQ.send_msg(ProcessReady,PRIORITY);
 
+    //! Receive message and evaluate
     int recvmsg = mesQ.receive_msg(PRIORITY);
-
     switch(recvmsg)
     {
         case DataRdySHM:

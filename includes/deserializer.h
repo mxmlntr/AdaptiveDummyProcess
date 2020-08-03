@@ -1,10 +1,22 @@
-//
-// Created by visxim on 7/27/20.
-//
-
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  /home/visxim/CLionProjects/AdaptiveDummyProcess/includes/deserializer.h
+ *        \brief  Header of deserializer for deserializing the parsed configuration data
+ *
+ *      \details Deserializer for deserializing data from both shared memory and files
+ *
+ *
+ *********************************************************************************************************************/
 #ifndef ADAPTIVEDUMMYPROCESS_DESERIALIZER_H
 #define ADAPTIVEDUMMYPROCESS_DESERIALIZER_H
-
+/**********************************************************************************************************************
+ *  INCLUDES
+ *********************************************************************************************************************/
 #include "data_storage.h"
 #include <boost/archive/text_oarchive.hpp>
 #include <boost/archive/text_iarchive.hpp>
@@ -17,6 +29,9 @@
 using namespace boost::interprocess;
 using namespace boost::iostreams;
 
+/*!
+ * \brief Class of deserializer which handles deserialization of data from files and shared memory
+ */
 class deserializer{
 private:
     string filename;

@@ -1,25 +1,36 @@
-//
-// Created by visxim on 7/27/20.
-//
-
+/**********************************************************************************************************************
+ *  COPYRIGHT
+ *  -------------------------------------------------------------------------------------------------------------------
+ *
+ *  -------------------------------------------------------------------------------------------------------------------
+ *  FILE DESCRIPTION
+ *  -----------------------------------------------------------------------------------------------------------------*/
+/**        \file  /home/visxim/CLionProjects/AdaptiveDummyProcess/includes/checksum_manager.h
+ *        \brief  Header of checksum_manager for checking the integrity of the data
+ *
+ *      \details The Checksum_manager creates and checks if the data is valid
+ *
+ *
+ *********************************************************************************************************************/
 #ifndef ADAPTIVEDUMMYPROCESS_CHECKSUM_MANAGER_H
 #define ADAPTIVEDUMMYPROCESS_CHECKSUM_MANAGER_H
-
+/**********************************************************************************************************************
+ *  INCLUDES
+ *********************************************************************************************************************/
 #include "data_storage.h"
 #include "boost/crc.hpp"
 #include "iostream"
 
-// Redefine this to change to processing buffer size
-#define PRIVATE_BUFFER_SIZE  1024
-// Global objects
-std::streamsize const  buffer_size = PRIVATE_BUFFER_SIZE;
-
+/*!
+ * \brief Class of checksum manager for CRC managment
+ */
 class checksum_manager{
 
 private:
 
 public:
     int createCRC(UMGR_s *CRCdata);
+    int checkCRC(UMGR_s *CRCdata);
 
 };
 
