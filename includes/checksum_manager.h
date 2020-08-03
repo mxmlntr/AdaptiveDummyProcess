@@ -7,6 +7,7 @@
 
 #include "data_storage.h"
 #include "boost/crc.hpp"
+#include "iostream"
 
 // Redefine this to change to processing buffer size
 #define PRIVATE_BUFFER_SIZE  1024
@@ -18,7 +19,7 @@ class checksum_manager{
 private:
 
 public:
-    int createCRC(string crcString);
+    int createCRC(UMGR_s *CRCdata);
 
 };
 

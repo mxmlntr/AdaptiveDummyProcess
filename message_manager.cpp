@@ -86,7 +86,7 @@ int message_manager::receive_msg(unsigned int priority)
     }
     else
     {
-        //cout << "TIMEOUT: MessageQueue." << endl;
+        cout << "TIMEOUT: MessageQueue." << endl;
         return 0;
     }
 };

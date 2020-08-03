@@ -4,36 +4,17 @@
 
 #include "checksum_manager.h"
 
-int checksum_manager::createCRC(string crcString)
+/*
+ * Needs to be overloaded for different data structures
+ *
+ * */
+int checksum_manager::createCRC(UMGR_s *CRCdata)
 {
     boost::crc_32_type result;
-    result.process_bytes(crcString.data(), crcString.length());
+
+    result.process_block(CRCdata, CRCdata + 1);
+
+    cout << result.checksum() << endl;
+
     return result.checksum();
-
-    /*
-    boost::crc_32_type  result;
-
-    for ( int i = 1 ; i < 100 ; ++i )
-    {
-        std::ifstream  ifs( filename, std::ios_base::binary );
-
-        if ( ifs )
-        {
-            do
-            {
-                char  buffer[ buffer_size ];
-
-                ifs.read( buffer, buffer_size );
-                result.process_bytes( buffer, ifs.gcount() );
-            } while ( ifs );
-        }
-        else
-        {
-            std::cerr << "Failed to open file '" << filename << "'."
-                      << std::endl;
-        }
-    }
-    //std::cout << std::hex << std::uppercase << result.checksum() << std::endl;
-    return result;
-     */
 };
