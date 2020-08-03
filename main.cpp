@@ -22,6 +22,13 @@
 
 #define PRIORITY 1
 
+/**********************************************************************************************************************
+ *  OBJECT DECLARATION
+ *********************************************************************************************************************/
+message_manager mesQ;
+deserializer des("UMGR.json");
+checksum_manager crc;
+
 //! Enum for synchronization via message queue
 enum SyncMsg
 {
@@ -34,11 +41,6 @@ enum SyncMsg
     ReceivingError = 66,
     DaemonTimeout = 77
 };
-
-//! Declaration of the objects
-message_manager mesQ;
-deserializer des("UMGR.json");
-checksum_manager crc;
 
 int main(int argc, char **argv)
 {
