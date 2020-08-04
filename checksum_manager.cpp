@@ -25,45 +25,19 @@
  * */
 int checksum_manager::createCRC(UMGR_s *CRCdata)
 {
-    boost::crc_32_type result;
+    //! Process all bytes of the struct
+    crc_32_type crc;
+    crc.process_bytes(CRCdata->name.data(), CRCdata->name.size());
+    crc.process_bytes(CRCdata->description.data(), CRCdata->description.size());
+    crc.process_bytes(CRCdata->dlt_id.data(), CRCdata->dlt_id.size());
+    crc.process_bytes(CRCdata->log_mode.data(), CRCdata->log_mode.size());
+    crc.process_bytes(CRCdata->log_level.data(), CRCdata->log_level.size());
+    crc.process_bytes(CRCdata->log_dir_path.data(), CRCdata->log_dir_path.size());
+    crc.process_block(&CRCdata->ipc_port, &CRCdata->ipc_port+1);
+    crc.process_block(&CRCdata->reconnection_retry_offset, &CRCdata->reconnection_retry_offset+1);
+    crc.process_block(&CRCdata->msg_buf_size, &CRCdata->msg_buf_size+1);
 
-    cout << &CRCdata->name << " value: " <<  CRCdata->name  << endl;
-    cout << &CRCdata->description << " value: " <<  CRCdata->description  << endl;
-    cout << &CRCdata->dlt_id << " value: " <<  CRCdata->dlt_id  << endl;
-    cout << &CRCdata->log_mode << " value: " <<  CRCdata->log_mode  << endl;
-    cout << &CRCdata->log_level << " value: " <<  CRCdata->log_level  << endl;
-    cout << &CRCdata->log_dir_path << " value: " <<  CRCdata->log_dir_path << endl;
-    cout << &CRCdata->ipc_port << " value: " <<  CRCdata->ipc_port  << endl;
-    cout << &CRCdata->reconnection_retry_offset << " value: " <<  CRCdata->reconnection_retry_offset  << endl;
-    cout << &CRCdata->msg_buf_size << " value: " <<  CRCdata->msg_buf_size  << endl;
-    cout << &CRCdata->checksum << " value: " <<  CRCdata->checksum  << endl;
-
-    result.process_block(&CRCdata->name, &CRCdata->checksum);
-
-    cout << "Checksum: " <<result.checksum() << endl;
-
-    cout << sizeof(string) << endl;
-    cout << sizeof(unsigned int) << endl;
-    cout << sizeof(int) << endl;
-
-    return result.checksum();
-
-    union tWandler
-    {
-        struct
-        {
-            char hi;
-            char lo;
-        } byte;
-    } Wandler;
-
-    Wandler.byte.hi = 'a';
-    Wandler.byte.lo = 'b';
-
-    result.process_block(&Wandler.byte.hi, &Wandler.byte.lo);
-    cout << "CRC: " << result.checksum() << endl;
-    return 1;
-
+    return crc.checksum();
 };
 
 /*!
@@ -73,5 +47,22 @@ int checksum_manager::createCRC(UMGR_s *CRCdata)
  * */
 int checksum_manager::checkCRC(UMGR_s *CRCdata)
 {
+    //! Process all bytes of the struct
+    crc_32_type crc;
+    crc.process_bytes(CRCdata->name.data(), CRCdata->name.size());
+    crc.process_bytes(CRCdata->description.data(), CRCdata->description.size());
+    crc.process_bytes(CRCdata->dlt_id.data(), CRCdata->dlt_id.size());
+    crc.process_bytes(CRCdata->log_mode.data(), CRCdata->log_mode.size());
+    crc.process_bytes(CRCdata->log_level.data(), CRCdata->log_level.size());
+    crc.process_bytes(CRCdata->log_dir_path.data(), CRCdata->log_dir_path.size());
+    crc.process_block(&CRCdata->ipc_port, &CRCdata->ipc_port+1);
+    crc.process_block(&CRCdata->reconnection_retry_offset, &CRCdata->reconnection_retry_offset+1);
+    crc.process_block(&CRCdata->msg_buf_size, &CRCdata->msg_buf_size+1);
 
+    //! Compare the received checksum with the self calculated
+    if(crc.checksum() == CRCdata->checksum)
+    {
+        return 1;
+    }
+    return 0;
 };

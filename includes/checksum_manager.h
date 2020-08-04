@@ -21,6 +21,8 @@
 #include "boost/crc.hpp"
 #include "iostream"
 
+using namespace boost;
+
 /*!
  * \brief Class of checksum manager for CRC managment
  */

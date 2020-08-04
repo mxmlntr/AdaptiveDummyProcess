@@ -27,7 +27,7 @@
  *********************************************************************************************************************/
 message_manager mesQ;
 deserializer des("UMGR.json");
-checksum_manager crc;
+checksum_manager checksum;
 
 //! Enum for synchronization via message queue
 enum SyncMsg
@@ -59,16 +59,28 @@ int main(int argc, char **argv)
         case DataRdySHM:
             cout << "Receiving data from SHM." << endl;
             des.deserializeStructFromSHM(&receivedData);
-            crc.createCRC(&receivedData);
-            cout << "Received via SHM:" << receivedData.name << endl;
-            mesQ.send_msg(DataReceiveSuccess,PRIORITY);
+            if(checksum.checkCRC(&receivedData))
+            {
+                cout << "Received via SHM:" << receivedData.name << endl;
+                mesQ.send_msg(DataReceiveSuccess,PRIORITY);
+            } else
+            {
+                cout << "CRC error." << endl;
+                mesQ.send_msg(DataErrorCRC,PRIORITY);
+            }
             break;
         case DataRdyFile:
             cout << "Receiving data from file." << endl;
             des.deserializeStructFromFileMemMap(&receivedData);
-            crc.createCRC(&receivedData);
-            cout << "Received via file:" << receivedData.name << endl;
-            mesQ.send_msg(DataReceiveSuccess,PRIORITY);
+            if(checksum.checkCRC(&receivedData))
+            {
+                cout << "Received via file:" << receivedData.name << endl;
+                mesQ.send_msg(DataReceiveSuccess,PRIORITY);
+            } else
+            {
+                cout << "CRC error." << endl;
+                mesQ.send_msg(DataErrorCRC,PRIORITY);
+            }
             break;
         case ProcessTimeout:
             cout << "Connection to Process UMGR timed out." << endl;
