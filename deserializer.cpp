@@ -66,7 +66,6 @@ void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
 
     //! Close input filestream
     ifs.close();
-
 };
 
 /*!
@@ -92,6 +91,9 @@ void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
 
     //! Read data from archive
     ia >> *Data_s;
+
+    //! Close stream
+    in.close();
 };
 
 /*!
