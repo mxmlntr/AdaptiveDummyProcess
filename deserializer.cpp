@@ -87,7 +87,7 @@ void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
     stream<mapped_file> in(params);
 
     //! Create an input archive
-    boost::archive::text_iarchive ia(in);
+    boost::archive::binary_iarchive ia(in);
 
     //! Read data from archive
     ia >> *Data_s;

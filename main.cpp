@@ -71,6 +71,7 @@ int main(int argc, char **argv)
             break;
         case DataRdyFile:
             cout << "Receiving data from file." << endl;
+            des.setfilename("UMGR.json");
             des.deserializeStructFromFileMemMap(&receivedData);
             if(checksum.checkCRC(&receivedData))
             {
