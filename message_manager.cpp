@@ -40,10 +40,10 @@ int message_manager::openQUEUE(string filename)
     string DtoPfilename = filename+"QUEUE_DaemontoProcess";
 
     //!can throw exceptions when queue isnt already created
-    msgqueSEND.reset(new message_queue(open_only, PtoDfilename.c_str()));
+    msgqueSEND.reset(new message_queue(open_or_create, DtoPfilename.c_str(), 10, sizeof(int)));
     cout << "Opened queue named:" << PtoDfilename << endl;
 
-    msgqueRECEIVE.reset(new message_queue(open_only, DtoPfilename.c_str()));
+    msgqueRECEIVE.reset(new message_queue(open_or_create, DtoPfilename.c_str(), 10, sizeof(int)));
     cout << "Opened queue named:" << DtoPfilename << endl;
 
     return 1;

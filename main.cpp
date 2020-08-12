@@ -25,9 +25,7 @@
 /**********************************************************************************************************************
  *  OBJECT DECLARATION
  *********************************************************************************************************************/
-message_manager mesQ;
-deserializer des("UMGR.json");
-checksum_manager checksum;
+
 
 //! Enum for synchronization via message queue
 enum SyncMsg
@@ -44,6 +42,10 @@ enum SyncMsg
 
 int main(int argc, char **argv)
 {
+    message_manager mesQ;
+    deserializer des("UMGR.json");
+    checksum_manager checksum;
+
     //! Create a struct for the received data
     UMGR_s receivedData;
 
