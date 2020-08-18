@@ -7,6 +7,10 @@
 #if !defined(_time_TP_H) || defined(TRACEPOINT_HEADER_MULTI_READ)
 #define _time_TP_H
 
+//! Defines if tracing is enabled
+//#define TRACENEWFILE
+#define TRACEOLDFILE
+
 #include <lttng/tracepoint.h>
 
 TRACEPOINT_EVENT(

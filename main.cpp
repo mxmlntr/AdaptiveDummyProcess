@@ -21,6 +21,7 @@
 #include "checksum_manager.h"
 #include "time-tp.h"
 
+//! MessageQueue Priority
 #define PRIORITY 1
 
 /**********************************************************************************************************************
@@ -47,9 +48,6 @@ int main(int argc, char **argv)
     deserializer des("UMGR.json");
     checksum_manager checksum;
 
-#ifdef TRACE
-    tracepoint(tp_provider, time_tracepoint_dummy, 1);
-#endif
     //! Create a struct for the received data
     UMGR_s receivedData;
 
@@ -61,7 +59,10 @@ int main(int argc, char **argv)
 
     //! Receive message and evaluate
     int recvmsg = mesQ.receive_msg(PRIORITY);
-#ifdef TRACE
+#ifdef TRACENEWFILE
+    tracepoint(tp_provider, time_tracepoint_dummy, 6);
+#endif
+#ifdef TRACEOLDFILE
     tracepoint(tp_provider, time_tracepoint_dummy, 2);
 #endif
     switch(recvmsg)
@@ -69,16 +70,17 @@ int main(int argc, char **argv)
         case DataRdySHM:
             cout << "Receiving data from SHM." << endl;
             des.deserializeStructFromSHM(&receivedData);
-#ifdef TRACE
-            tracepoint(tp_provider, time_tracepoint_dummy, 3);
+#ifdef TRACENEWFILE
+            tracepoint(tp_provider, time_tracepoint_dummy, 7);
 #endif
             if(checksum.checkCRC(&receivedData))
             {
                 cout << "Received via SHM:" << receivedData.name << endl;
-#ifdef TRACE
-                tracepoint(tp_provider, time_tracepoint_dummy, 4);
+#ifdef TRACENEWFILE
+                tracepoint(tp_provider, time_tracepoint_dummy, 8);
 #endif
                 mesQ.send_msg(DataReceiveSuccess,PRIORITY);
+
             } else
             {
                 cout << "CRC error." << endl;
@@ -86,19 +88,17 @@ int main(int argc, char **argv)
             }
             break;
         case DataRdyFile:
-            tracepoint(tp_provider, time_tracepoint_dummy, 1);
             cout << "Receiving data from file." << endl;
             des.setfilename("UMGR.json");
             des.deserializeStructFromFileMemMap(&receivedData);
-            tracepoint(tp_provider, time_tracepoint_dummy, 2);
-#ifdef TRACE
-            tracepoint(tp_provider, time_tracepoint_dummy, 5);
+#ifdef TRACEOLDFILE
+            tracepoint(tp_provider, time_tracepoint_dummy, 3);
 #endif
             if(checksum.checkCRC(&receivedData))
             {
                 cout << "Received via file:" << receivedData.name << endl;
-#ifdef TRACE
-                tracepoint(tp_provider, time_tracepoint_dummy, 6);
+#ifdef TRACEOLDFILE
+                tracepoint(tp_provider, time_tracepoint_dummy, 4);
 #endif
                 mesQ.send_msg(DataReceiveSuccess,PRIORITY);
             } else

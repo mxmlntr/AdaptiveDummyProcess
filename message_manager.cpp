@@ -41,10 +41,10 @@ int message_manager::openQUEUE(string filename)
 
     //!can throw exceptions when queue isnt already created
     msgqueSEND.reset(new message_queue(open_or_create, PtoDfilename.c_str(), 10, sizeof(int)));
-    cout << "Opened SEND queue named:" << PtoDfilename << endl;
+    cout << "Dummy created SEND queue named:" << PtoDfilename << endl;
 
     msgqueRECEIVE.reset(new message_queue(open_or_create, DtoPfilename.c_str(), 10, sizeof(int)));
-    cout << "Opened RECEIVE queue named:" << DtoPfilename << endl;
+    cout << "Dummy created RECEIVE queue named:" << DtoPfilename << endl;
 
     return 1;
 };
@@ -67,9 +67,9 @@ int message_manager::createQUEUE(string filename)
 
     //! Create message queues
     msgqueSEND.reset(new message_queue(open_or_create, DtoPfilename.c_str(), 10, sizeof(int)));
-    cout << "Created SEND queue named:" << DtoPfilename << endl;
+    cout << "Daemon created SEND queue named:" << DtoPfilename << endl;
     msgqueRECEIVE.reset(new message_queue(open_or_create, PtoDfilename.c_str(), 10, sizeof(int)));
-    cout << "Created RECEIVE queue named:" << PtoDfilename << endl;
+    cout << "Daemon created RECEIVE queue named:" << PtoDfilename << endl;
 
     return 1;
 };
