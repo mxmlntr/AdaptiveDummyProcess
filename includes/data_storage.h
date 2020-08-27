@@ -38,7 +38,6 @@ typedef struct {
     unsigned int ipc_port;
     unsigned int reconnection_retry_offset;
     unsigned int msg_buf_size;
-    string test;
     int checksum;
 
     //!function for serializing the struct
@@ -54,7 +53,6 @@ typedef struct {
         ar & ipc_port;
         ar & reconnection_retry_offset;
         ar & msg_buf_size;
-        ar & test;
         ar & checksum;
     }
 } UMGR_s;
