@@ -19,7 +19,7 @@
  *********************************************************************************************************************/
 #include "data_storage.h"
 #include "boost/crc.hpp"
-#include "iostream"
+#include <iostream>
 
 using namespace boost;
 
@@ -31,8 +31,12 @@ class checksum_manager{
 private:
 
 public:
+    //!This method is overloaded for every struct in data_storage
     int createCRC(UMGR_s *CRCdata);
+    int createCRC(EXMPLE_s *CRCdata);
+
     int checkCRC(UMGR_s *CRCdata);
+    int checkCRC(EXMPLE_s *CRCdata);
 
 };
 

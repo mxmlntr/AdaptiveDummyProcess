@@ -46,33 +46,38 @@ void deserializer::setfilename(string name)
 };
 
 /*!
-* \brief Function for deserializing the struct from a file using iostream
+* \brief Function for deserializing the struct from a file using memory mapping
 *
 */
-void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
+void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
 {
     //! Erase the ".json" ending and add the "serial" tag
-    filename.erase(filename.length()-5,5);
-    string SHMfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
+    filename.erase(filename.length()-5 , 5);
+    string binaryfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
 
-    //! Open an input filestream
-    std::ifstream ifs(SHMfilename);
+    //! Set the mapped file parameters
+    mapped_file_params params;
+    params.path          = binaryfilename;
+    params.flags         = mapped_file::mapmode::readwrite;
+
+    //! Create a stream with the parameters
+    stream<mapped_file> in(params);
 
     //! Create an input archive
-    boost::archive::binary_iarchive ia(ifs);
+    boost::archive::binary_iarchive ia(in);
 
     //! Read data from archive
     ia >> *Data_s;
 
-    //! Close input filestream
-    ifs.close();
+    //! Close stream
+    in.close();
 };
 
 /*!
 * \brief Function for deserializing the struct from a file using memory mapping
 *
 */
-void deserializer::deserializeStructFromFileMemMap(UMGR_s *Data_s)
+void deserializer::deserializeStructFromFileMemMap(EXMPLE_s *Data_s)
 {
     //! Erase the ".json" ending and add the "serial" tag
     filename.erase(filename.length()-5 , 5);
@@ -111,15 +116,64 @@ void deserializer::deserializeStructFromSHM(UMGR_s *Data_s)
     //! create the shared memory object
     mapped_region region(shm, read_only);
 
-    //! create the output stream
+    //! create the input stream
     bufferstream bs(std::ios::in);
     bs.buffer(reinterpret_cast<char*>(region.get_address()), region.get_size());
 
-    //! create the output archive
+    //! create the input archive
     boost::archive::text_iarchive ia(bs);
 
-    //! Serialize the data to the file
+    //! deserialize the data from the SHM
     ia >> *Data_s;
+};
+
+/*!
+* \brief Function for deserializing the struct from a shared memory
+*
+*/
+void deserializer::deserializeStructFromSHM(EXMPLE_s *Data_s)
+{
+    //! Erase the ".json" ending and add the "serial" tag
+    filename.erase(filename.length()-5 , 5);
+    string SHMfilename = "shm"+filename;
+
+    //! Remove the shared memory object if it is still present
+    shared_memory_object shm(open_only, SHMfilename.c_str() , read_only);
+    //! create the shared memory object
+    mapped_region region(shm, read_only);
+
+    //! create the input stream
+    bufferstream bs(std::ios::in);
+    bs.buffer(reinterpret_cast<char*>(region.get_address()), region.get_size());
+
+    //! create the input archive
+    boost::archive::text_iarchive ia(bs);
+
+    //! deserialize the data from the SHM
+    ia >> *Data_s;
+};
+
+/*!
+* \brief Function for deserializing the struct from a file using iostream
+*
+*/
+void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
+{
+    //! Erase the ".json" ending and add the "serial" tag
+    filename.erase(filename.length()-5,5);
+    string SHMfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
+
+    //! Open an input filestream
+    std::ifstream ifs(SHMfilename);
+
+    //! Create an input archive
+    boost::archive::binary_iarchive ia(ifs);
+
+    //! Read data from archive
+    ia >> *Data_s;
+
+    //! Close input filestream
+    ifs.close();
 };
 
 /*!

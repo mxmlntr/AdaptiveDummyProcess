@@ -39,9 +39,18 @@ public:
     deserializer();
     deserializer(string name);
     void setfilename(string name);
-    void deserializeStructFromFile(UMGR_s *Data_s);
+
+    //!This method is overloaded for every struct in data_storage
     void deserializeStructFromSHM(UMGR_s *Data_s);
+    void deserializeStructFromSHM(EXMPLE_s *Data_s);
+
+    //!This method is overloaded for every struct in data_storage
     void deserializeStructFromFileMemMap(UMGR_s *Data_s);
+    void deserializeStructFromFileMemMap(EXMPLE_s *Data_s);
+
+    //!This method was replaced by the MemMap version
+    void deserializeStructFromFile(UMGR_s *Data_s);
+    //!Unused
     void copyStructFromSHM(UMGR_s *Data_s);
 };
 

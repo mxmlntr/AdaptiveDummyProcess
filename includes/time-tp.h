@@ -9,13 +9,13 @@
 
 //! Defines if tracing is enabled
 //#define TRACENEWFILE
-#define TRACEOLDFILE
+//#define TRACEOLDFILE
 
 #include <lttng/tracepoint.h>
 
 TRACEPOINT_EVENT(
         tp_provider,
-        time_tracepoint_dummy,
+        time_tracepoint_dummy_old,
         TP_ARGS(
                 int, probe_nr
         ),
@@ -26,12 +26,12 @@ TRACEPOINT_EVENT(
 
 TRACEPOINT_EVENT(
         tp_provider,
-        overall_time_tracepoint,
+        time_tracepoint_dummy_new,
         TP_ARGS(
-
+                int, probe_nr
         ),
         TP_FIELDS(
-
+                ctf_integer(int, probeNumber, probe_nr)
         )
 )
 

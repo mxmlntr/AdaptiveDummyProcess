@@ -36,8 +36,40 @@ int checksum_manager::createCRC(UMGR_s *CRCdata)
     crc.process_block(&CRCdata->ipc_port, &CRCdata->ipc_port+1);
     crc.process_block(&CRCdata->reconnection_retry_offset, &CRCdata->reconnection_retry_offset+1);
     crc.process_block(&CRCdata->msg_buf_size, &CRCdata->msg_buf_size+1);
+    crc.process_block(CRCdata->test.data(), CRCdata->test.data());
 
     return crc.checksum();
+};
+
+/*!
+ * \brief Function for creating the checksum
+ *
+ * Needs to be overloaded for different data structures
+ * */
+int checksum_manager::createCRC(EXMPLE_s *CRCdata)
+{
+    //! Process all bytes of the struct
+    crc_32_type crc;
+
+    return crc.checksum();
+};
+
+/*!
+ * \brief Function for checking the checksum
+ *
+ * Needs to be overloaded for different data structures
+ * */
+int checksum_manager::checkCRC(EXMPLE_s *CRCdata)
+{
+    //! Process all bytes of the struct
+    crc_32_type crc;
+
+    //! Compare the received checksum with the self calculated
+    if(crc.checksum() == CRCdata->checksum)
+    {
+        return 1;
+    }
+    return 0;
 };
 
 /*!
