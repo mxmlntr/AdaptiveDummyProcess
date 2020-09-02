@@ -8,8 +8,8 @@
 #define _time_TP_H
 
 //! Defines if tracing is enabled
-#define TRACENEWFILE
-//#define TRACEOLDFILE
+//#define TRACENEWFILE
+#define TRACEOLDFILE
 
 #include <lttng/tracepoint.h>
 
