@@ -25,20 +25,7 @@
  * */
 int checksum_manager::createCRC(UMGR_s *CRCdata)
 {
-    //! Process all bytes of the struct
-    crc_32_type crc;
-    crc.process_bytes(CRCdata->name.data(), CRCdata->name.size());
-    crc.process_bytes(CRCdata->description.data(), CRCdata->description.size());
-    crc.process_bytes(CRCdata->dlt_id.data(), CRCdata->dlt_id.size());
-    crc.process_bytes(CRCdata->log_mode.data(), CRCdata->log_mode.size());
-    crc.process_bytes(CRCdata->log_level.data(), CRCdata->log_level.size());
-    crc.process_bytes(CRCdata->log_dir_path.data(), CRCdata->log_dir_path.size());
-    crc.process_block(&CRCdata->ipc_port, &CRCdata->ipc_port+1);
-    crc.process_block(&CRCdata->reconnection_retry_offset, &CRCdata->reconnection_retry_offset+1);
-    crc.process_block(&CRCdata->msg_buf_size, &CRCdata->msg_buf_size+1);
-    crc.process_block(CRCdata->test.data(), CRCdata->test.data());
-
-    return crc.checksum();
+    return CRCdata->calcCRC();
 };
 
 /*!
@@ -79,20 +66,8 @@ int checksum_manager::checkCRC(EXMPLE_s *CRCdata)
  * */
 int checksum_manager::checkCRC(UMGR_s *CRCdata)
 {
-    //! Process all bytes of the struct
-    crc_32_type crc;
-    crc.process_bytes(CRCdata->name.data(), CRCdata->name.size());
-    crc.process_bytes(CRCdata->description.data(), CRCdata->description.size());
-    crc.process_bytes(CRCdata->dlt_id.data(), CRCdata->dlt_id.size());
-    crc.process_bytes(CRCdata->log_mode.data(), CRCdata->log_mode.size());
-    crc.process_bytes(CRCdata->log_level.data(), CRCdata->log_level.size());
-    crc.process_bytes(CRCdata->log_dir_path.data(), CRCdata->log_dir_path.size());
-    crc.process_block(&CRCdata->ipc_port, &CRCdata->ipc_port+1);
-    crc.process_block(&CRCdata->reconnection_retry_offset, &CRCdata->reconnection_retry_offset+1);
-    crc.process_block(&CRCdata->msg_buf_size, &CRCdata->msg_buf_size+1);
-
     //! Compare the received checksum with the self calculated
-    if(crc.checksum() == CRCdata->checksum)
+    if(CRCdata->calcCRC() == CRCdata->checksum)
     {
         return 1;
     }
