@@ -50,6 +50,7 @@ public:
 
     //!This method was replaced by the MemMap version
     void deserializeStructFromFile(UMGR_s *Data_s);
+    void deserializeStructFromFile(EXMPLE_s *Data_s);
     //!Unused
     void copyStructFromSHM(UMGR_s *Data_s);
 };

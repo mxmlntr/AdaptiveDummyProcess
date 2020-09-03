@@ -127,7 +127,8 @@ int main(int argc, char **argv)
             des.setfilename("EXMPLE.json");
 #endif
 
-            des.deserializeStructFromFileMemMap(&receivedData);
+            //TODO: des.deserializeStructFromFileMemMap(&receivedData);
+            des.deserializeStructFromFile(&receivedData);
 
 #ifdef TRACEOLDFILE
             tracepoint(tp_provider, time_tracepoint_dummy_old, 3);

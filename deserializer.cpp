@@ -177,6 +177,29 @@ void deserializer::deserializeStructFromFile(UMGR_s *Data_s)
 };
 
 /*!
+* \brief Function for deserializing the struct from a file using iostream
+*
+*/
+void deserializer::deserializeStructFromFile(EXMPLE_s *Data_s)
+{
+    //! Erase the ".json" ending and add the "serial" tag
+    filename.erase(filename.length()-5,5);
+    string SHMfilename = "/home/visxim/CLionProjects/ShareFolder/serial"+filename;
+
+    //! Open an input filestream
+    std::ifstream ifs(SHMfilename);
+
+    //! Create an input archive
+    boost::archive::binary_iarchive ia(ifs);
+
+    //! Read data from archive
+    ia >> *Data_s;
+
+    //! Close input filestream
+    ifs.close();
+};
+
+/*!
  * \brief Not usable because memcpy does only work for POD and string is not a POD type
  *
  * */
