@@ -118,7 +118,7 @@ int message_manager::receive_msg(unsigned int priority)
     size_t recvd_size;
     //! The timed receive is handled by the BOOST library and is implemented by a mutex with condition
     if(msgqueRECEIVE->timed_receive((void*) &message,sizeof(int),recvd_size,priority,
-                                    boost::posix_time::ptime(microsec_clock::universal_time()) + boost::posix_time::milliseconds(9000)))
+                                    boost::posix_time::ptime(microsec_clock::universal_time()) + boost::posix_time::milliseconds(90000)))
     {
         //cout << "Message successfully received." << endl;
         return message;
