@@ -1,0 +1,141 @@
+\hypertarget{main_8cpp}{}\section{/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/main.cpp File Reference}
+\label{main_8cpp}\index{/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/main.\+cpp@{/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/main.\+cpp}}
+
+
+main of the Adaptive\+Dummy\+Process  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}message\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}deserializer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}checksum\+\_\+manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}time-\/tp.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_a25e7852941475e51c875632ac1985d8a}{P\+R\+I\+O\+R\+I\+TY}~1
+\begin{DoxyCompactList}\small\item\em Message\+Queue Priority. \end{DoxyCompactList}\item 
+\#define \hyperlink{main_8cpp_afe194f87b759e2541681cfc7bb9a3d72}{E\+X\+M\+P\+LE}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9}{Sync\+Msg} \{ \newline
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a2b8773a31e7caeffc27df2c78df7bd3a}{Process\+Timeout} = 00, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ac9780f79be0e3d433adeb055d70a4ef6}{Process\+Ready} = 11, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a3f1f1c2def7164cf1b9b525c6754ec59}{Data\+Rdy\+S\+HM} = 22, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9afc92e28c7aac0d36a3de10fd16c2f6e9}{Data\+Rdy\+File} = 33, 
+\newline
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a70c465830655f986848e14567e3a0992}{Data\+Receive\+Success} = 44, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9add9875ee9a2249b033cf9a59afba954d}{Data\+Error\+C\+RC} = 55, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ad970cf97730e7c404d0bf7c460f753df}{Receiving\+Error} = 66, 
+\hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9aa343c85c32133b3cca6bc019bf6386c4}{Daemon\+Timeout} = 77
+ \}\begin{DoxyCompactList}\small\item\em Enum for synchronization via message queue. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+main of the Adaptive\+Dummy\+Process 
+
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8cpp_afe194f87b759e2541681cfc7bb9a3d72}\label{main_8cpp_afe194f87b759e2541681cfc7bb9a3d72}} 
+\index{main.\+cpp@{main.\+cpp}!E\+X\+M\+P\+LE@{E\+X\+M\+P\+LE}}
+\index{E\+X\+M\+P\+LE@{E\+X\+M\+P\+LE}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{E\+X\+M\+P\+LE}{EXMPLE}}
+{\footnotesize\ttfamily \#define E\+X\+M\+P\+LE}
+
+\mbox{\Hypertarget{main_8cpp_a25e7852941475e51c875632ac1985d8a}\label{main_8cpp_a25e7852941475e51c875632ac1985d8a}} 
+\index{main.\+cpp@{main.\+cpp}!P\+R\+I\+O\+R\+I\+TY@{P\+R\+I\+O\+R\+I\+TY}}
+\index{P\+R\+I\+O\+R\+I\+TY@{P\+R\+I\+O\+R\+I\+TY}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{P\+R\+I\+O\+R\+I\+TY}{PRIORITY}}
+{\footnotesize\ttfamily \#define P\+R\+I\+O\+R\+I\+TY~1}
+
+
+
+Message\+Queue Priority. 
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9}} 
+\index{main.\+cpp@{main.\+cpp}!Sync\+Msg@{Sync\+Msg}}
+\index{Sync\+Msg@{Sync\+Msg}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{Sync\+Msg}{SyncMsg}}
+{\footnotesize\ttfamily enum \hyperlink{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9}{Sync\+Msg}}
+
+
+
+Enum for synchronization via message queue. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Process\+Timeout@{Process\+Timeout}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Process\+Timeout@{Process\+Timeout}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a2b8773a31e7caeffc27df2c78df7bd3a}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a2b8773a31e7caeffc27df2c78df7bd3a}} 
+Process\+Timeout&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Process\+Ready@{Process\+Ready}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Process\+Ready@{Process\+Ready}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ac9780f79be0e3d433adeb055d70a4ef6}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ac9780f79be0e3d433adeb055d70a4ef6}} 
+Process\+Ready&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Data\+Rdy\+S\+HM@{Data\+Rdy\+S\+HM}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Data\+Rdy\+S\+HM@{Data\+Rdy\+S\+HM}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a3f1f1c2def7164cf1b9b525c6754ec59}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a3f1f1c2def7164cf1b9b525c6754ec59}} 
+Data\+Rdy\+S\+HM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Data\+Rdy\+File@{Data\+Rdy\+File}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Data\+Rdy\+File@{Data\+Rdy\+File}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9afc92e28c7aac0d36a3de10fd16c2f6e9}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9afc92e28c7aac0d36a3de10fd16c2f6e9}} 
+Data\+Rdy\+File&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Data\+Receive\+Success@{Data\+Receive\+Success}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Data\+Receive\+Success@{Data\+Receive\+Success}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a70c465830655f986848e14567e3a0992}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9a70c465830655f986848e14567e3a0992}} 
+Data\+Receive\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Data\+Error\+C\+RC@{Data\+Error\+C\+RC}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Data\+Error\+C\+RC@{Data\+Error\+C\+RC}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9add9875ee9a2249b033cf9a59afba954d}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9add9875ee9a2249b033cf9a59afba954d}} 
+Data\+Error\+C\+RC&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Receiving\+Error@{Receiving\+Error}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Receiving\+Error@{Receiving\+Error}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ad970cf97730e7c404d0bf7c460f753df}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9ad970cf97730e7c404d0bf7c460f753df}} 
+Receiving\+Error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Daemon\+Timeout@{Daemon\+Timeout}!main.\+cpp@{main.\+cpp}}\index{main.\+cpp@{main.\+cpp}!Daemon\+Timeout@{Daemon\+Timeout}}}\mbox{\Hypertarget{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9aa343c85c32133b3cca6bc019bf6386c4}\label{main_8cpp_a1f035773fc136ce529c9c22f3953f7c9aa343c85c32133b3cca6bc019bf6386c4}} 
+Daemon\+Timeout&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+Create a struct for the received data
+
+Open the message queue for synchronization
+
+Notify the daemon that the process is ready for receiption
+
+Receive message and evaluate Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}

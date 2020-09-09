@@ -1,0 +1,219 @@
+\hypertarget{classdeserializer}{}\section{deserializer Class Reference}
+\label{classdeserializer}\index{deserializer@{deserializer}}
+
+
+Class of deserializer which handles deserialization of data from files and shared memory.  
+
+
+
+
+{\ttfamily \#include $<$deserializer.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classdeserializer_a68472d705e664b102e5ae2dabf1f4725}{deserializer} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor for the deserializer. \end{DoxyCompactList}\item 
+\hyperlink{classdeserializer_a3d9141cd090ad5f52e0d2baed0764ebf}{deserializer} (string name)
+\begin{DoxyCompactList}\small\item\em Constructor for setting the filename. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_a5d20cd8a970098ce2bb6473c2eccfddf}{setfilename} (string name)
+\begin{DoxyCompactList}\small\item\em Function for setting the filename. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_a551670afd582e6223efe33f8915dff68}{deserialize\+Struct\+From\+S\+HM} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em This method is overloaded for every struct in data\+\_\+storage. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_a759537748db65f231bf04372efe3253c}{deserialize\+Struct\+From\+S\+HM} (\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Function for deserializing the struct from a shared memory. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_a5c34f1218c96b702dee10f34229c3253}{deserialize\+Struct\+From\+File\+Mem\+Map} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em This method is overloaded for every struct in data\+\_\+storage. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_ac2d58e3468d72863414cfd8c9bdcd323}{deserialize\+Struct\+From\+File\+Mem\+Map} (\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Function for deserializing the struct from a file using memory mapping. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_ab70dbab4bfa05c09a648b02514be8c2f}{deserialize\+Struct\+From\+File} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em This method was replaced by the Mem\+Map version. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_a545372d67a9795603afe503efc98f6f3}{deserialize\+Struct\+From\+File} (\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Function for deserializing the struct from a file using iostream. \end{DoxyCompactList}\item 
+void \hyperlink{classdeserializer_ad4cad955149bad72748d525d3207273d}{copy\+Struct\+From\+S\+HM} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$Data\+\_\+s)
+\begin{DoxyCompactList}\small\item\em Unused. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{classdeserializer_acef129bae806d64a1692d805c3755ce4}{filename}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class of deserializer which handles deserialization of data from files and shared memory. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdeserializer_a68472d705e664b102e5ae2dabf1f4725}\label{classdeserializer_a68472d705e664b102e5ae2dabf1f4725}} 
+\index{deserializer@{deserializer}!deserializer@{deserializer}}
+\index{deserializer@{deserializer}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserializer()}{deserializer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily deserializer\+::deserializer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard constructor for the deserializer. 
+
+\mbox{\Hypertarget{classdeserializer_a3d9141cd090ad5f52e0d2baed0764ebf}\label{classdeserializer_a3d9141cd090ad5f52e0d2baed0764ebf}} 
+\index{deserializer@{deserializer}!deserializer@{deserializer}}
+\index{deserializer@{deserializer}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserializer()}{deserializer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily deserializer\+::deserializer (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Constructor for setting the filename. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classdeserializer_ad4cad955149bad72748d525d3207273d}\label{classdeserializer_ad4cad955149bad72748d525d3207273d}} 
+\index{deserializer@{deserializer}!copy\+Struct\+From\+S\+HM@{copy\+Struct\+From\+S\+HM}}
+\index{copy\+Struct\+From\+S\+HM@{copy\+Struct\+From\+S\+HM}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{copy\+Struct\+From\+S\+H\+M()}{copyStructFromSHM()}}
+{\footnotesize\ttfamily void deserializer\+::copy\+Struct\+From\+S\+HM (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+Unused. 
+
+Not usable because memcpy does only work for P\+OD and string is not a P\+OD type. \mbox{\Hypertarget{classdeserializer_ab70dbab4bfa05c09a648b02514be8c2f}\label{classdeserializer_ab70dbab4bfa05c09a648b02514be8c2f}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+File@{deserialize\+Struct\+From\+File}}
+\index{deserialize\+Struct\+From\+File@{deserialize\+Struct\+From\+File}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+File()}{deserializeStructFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+File (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+This method was replaced by the Mem\+Map version. 
+
+Function for deserializing the struct from a file using iostream. Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Open an input filestream
+
+Create an input archive
+
+Read data from archive
+
+Close input filestream \mbox{\Hypertarget{classdeserializer_a545372d67a9795603afe503efc98f6f3}\label{classdeserializer_a545372d67a9795603afe503efc98f6f3}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+File@{deserialize\+Struct\+From\+File}}
+\index{deserialize\+Struct\+From\+File@{deserialize\+Struct\+From\+File}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+File()}{deserializeStructFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+File (\begin{DoxyParamCaption}\item[{\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+Function for deserializing the struct from a file using iostream. 
+
+Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Open an input filestream
+
+Create an input archive
+
+Read data from archive
+
+Close input filestream \mbox{\Hypertarget{classdeserializer_a5c34f1218c96b702dee10f34229c3253}\label{classdeserializer_a5c34f1218c96b702dee10f34229c3253}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+File\+Mem\+Map@{deserialize\+Struct\+From\+File\+Mem\+Map}}
+\index{deserialize\+Struct\+From\+File\+Mem\+Map@{deserialize\+Struct\+From\+File\+Mem\+Map}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+File\+Mem\+Map()}{deserializeStructFromFileMemMap()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+File\+Mem\+Map (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+This method is overloaded for every struct in data\+\_\+storage. 
+
+Function for deserializing the struct from a file using memory mapping. Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Set the mapped file parameters
+
+Create a stream with the parameters
+
+Create an input archive
+
+Read data from archive
+
+Close stream \mbox{\Hypertarget{classdeserializer_ac2d58e3468d72863414cfd8c9bdcd323}\label{classdeserializer_ac2d58e3468d72863414cfd8c9bdcd323}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+File\+Mem\+Map@{deserialize\+Struct\+From\+File\+Mem\+Map}}
+\index{deserialize\+Struct\+From\+File\+Mem\+Map@{deserialize\+Struct\+From\+File\+Mem\+Map}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+File\+Mem\+Map()}{deserializeStructFromFileMemMap()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+File\+Mem\+Map (\begin{DoxyParamCaption}\item[{\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+Function for deserializing the struct from a file using memory mapping. 
+
+Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Set the mapped file parameters
+
+Create a stream with the parameters
+
+Create an input archive
+
+Read data from archive
+
+Close stream \mbox{\Hypertarget{classdeserializer_a551670afd582e6223efe33f8915dff68}\label{classdeserializer_a551670afd582e6223efe33f8915dff68}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+S\+HM@{deserialize\+Struct\+From\+S\+HM}}
+\index{deserialize\+Struct\+From\+S\+HM@{deserialize\+Struct\+From\+S\+HM}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+S\+H\+M()}{deserializeStructFromSHM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+S\+HM (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+This method is overloaded for every struct in data\+\_\+storage. 
+
+Function for deserializing the struct from a shared memory. Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Remove the shared memory object if it is still present
+
+create the shared memory object
+
+create the input stream
+
+create the input archive
+
+deserialize the data from the S\+HM \mbox{\Hypertarget{classdeserializer_a759537748db65f231bf04372efe3253c}\label{classdeserializer_a759537748db65f231bf04372efe3253c}} 
+\index{deserializer@{deserializer}!deserialize\+Struct\+From\+S\+HM@{deserialize\+Struct\+From\+S\+HM}}
+\index{deserialize\+Struct\+From\+S\+HM@{deserialize\+Struct\+From\+S\+HM}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{deserialize\+Struct\+From\+S\+H\+M()}{deserializeStructFromSHM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void deserializer\+::deserialize\+Struct\+From\+S\+HM (\begin{DoxyParamCaption}\item[{\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$}]{Data\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+Function for deserializing the struct from a shared memory. 
+
+Erase the \char`\"{}.\+json\char`\"{} ending and add the \char`\"{}serial\char`\"{} tag
+
+Remove the shared memory object if it is still present
+
+create the shared memory object
+
+create the input stream
+
+create the input archive
+
+deserialize the data from the S\+HM \mbox{\Hypertarget{classdeserializer_a5d20cd8a970098ce2bb6473c2eccfddf}\label{classdeserializer_a5d20cd8a970098ce2bb6473c2eccfddf}} 
+\index{deserializer@{deserializer}!setfilename@{setfilename}}
+\index{setfilename@{setfilename}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{setfilename()}{setfilename()}}
+{\footnotesize\ttfamily void deserializer\+::setfilename (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Function for setting the filename. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classdeserializer_acef129bae806d64a1692d805c3755ce4}\label{classdeserializer_acef129bae806d64a1692d805c3755ce4}} 
+\index{deserializer@{deserializer}!filename@{filename}}
+\index{filename@{filename}!deserializer@{deserializer}}
+\subsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily string deserializer\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/includes/\hyperlink{deserializer_8h}{deserializer.\+h}\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/\hyperlink{deserializer_8cpp}{deserializer.\+cpp}\end{DoxyCompactItemize}

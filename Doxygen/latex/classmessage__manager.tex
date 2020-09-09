@@ -1,0 +1,153 @@
+\hypertarget{classmessage__manager}{}\section{message\+\_\+manager Class Reference}
+\label{classmessage__manager}\index{message\+\_\+manager@{message\+\_\+manager}}
+
+
+Class of message manager which handles the synchronization between processes.  
+
+
+
+
+{\ttfamily \#include $<$message\+\_\+manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classmessage__manager_a9db91d8dc6020a4bb525abc218fe09ae}{message\+\_\+manager} ()
+\begin{DoxyCompactList}\small\item\em Standard constructor for the \hyperlink{classmessage__manager}{message\+\_\+manager}. \end{DoxyCompactList}\item 
+void \hyperlink{classmessage__manager_a1f802ec26eed0834f69988f43f194273}{send\+\_\+msg} (int message, unsigned int priority)
+\begin{DoxyCompactList}\small\item\em Send a message. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage__manager_a186a0f3b9e4e0a34a26f57f118a9dad7}{receive\+\_\+msg} (unsigned int priority)
+\begin{DoxyCompactList}\small\item\em Receive a message. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage__manager_a44006bd0a6a168cb40a81dcb1b81aaeb}{open\+Q\+U\+E\+UE} (string filename)
+\begin{DoxyCompactList}\small\item\em Method for opening the message queue. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage__manager_a63f1f841de93a791c5520f64ff797639}{create\+Q\+U\+E\+UE} (string filename)
+\begin{DoxyCompactList}\small\item\em Method for creating the message queue. \end{DoxyCompactList}\item 
+int \hyperlink{classmessage__manager_ad6d2784240bffb39dc7e2dae9d6b0751}{destroy\+Q\+U\+E\+UE} (string filename)
+\begin{DoxyCompactList}\small\item\em Method for destroying the message queues. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classmessage__manager_a83ad668e1cd4566d4d7936ed16e41c83}{Check\+Num\+Of\+Msg\+S\+E\+ND} ()
+\begin{DoxyCompactList}\small\item\em Check Nnumber of messages in the sender queue. \end{DoxyCompactList}\item 
+size\+\_\+t \hyperlink{classmessage__manager_a4bcbca2647a5bd5fa34fc01b36a9761a}{Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE} ()
+\begin{DoxyCompactList}\small\item\em Check Nnumber of messages in the receiver queue. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ message\+\_\+queue $>$ \hyperlink{classmessage__manager_a587e012eba883e294532f4d28bd54a47}{msgque\+S\+E\+ND}
+\item 
+std\+::unique\+\_\+ptr$<$ message\+\_\+queue $>$ \hyperlink{classmessage__manager_a02b3ec0e7e4003a7f8483382e0b9d813}{msgque\+R\+E\+C\+E\+I\+VE}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class of message manager which handles the synchronization between processes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmessage__manager_a9db91d8dc6020a4bb525abc218fe09ae}\label{classmessage__manager_a9db91d8dc6020a4bb525abc218fe09ae}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!message\+\_\+manager@{message\+\_\+manager}}
+\index{message\+\_\+manager@{message\+\_\+manager}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{message\+\_\+manager()}{message\_manager()}}
+{\footnotesize\ttfamily message\+\_\+manager\+::message\+\_\+manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Standard constructor for the \hyperlink{classmessage__manager}{message\+\_\+manager}. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmessage__manager_a4bcbca2647a5bd5fa34fc01b36a9761a}\label{classmessage__manager_a4bcbca2647a5bd5fa34fc01b36a9761a}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE@{Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE}}
+\index{Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE@{Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+V\+E()}{CheckNumOfMsgRECEIVE()}}
+{\footnotesize\ttfamily size\+\_\+t message\+\_\+manager\+::\+Check\+Num\+Of\+Msg\+R\+E\+C\+E\+I\+VE (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check Nnumber of messages in the receiver queue. 
+
+\mbox{\Hypertarget{classmessage__manager_a83ad668e1cd4566d4d7936ed16e41c83}\label{classmessage__manager_a83ad668e1cd4566d4d7936ed16e41c83}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!Check\+Num\+Of\+Msg\+S\+E\+ND@{Check\+Num\+Of\+Msg\+S\+E\+ND}}
+\index{Check\+Num\+Of\+Msg\+S\+E\+ND@{Check\+Num\+Of\+Msg\+S\+E\+ND}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{Check\+Num\+Of\+Msg\+S\+E\+N\+D()}{CheckNumOfMsgSEND()}}
+{\footnotesize\ttfamily size\+\_\+t message\+\_\+manager\+::\+Check\+Num\+Of\+Msg\+S\+E\+ND (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Check Nnumber of messages in the sender queue. 
+
+\mbox{\Hypertarget{classmessage__manager_a63f1f841de93a791c5520f64ff797639}\label{classmessage__manager_a63f1f841de93a791c5520f64ff797639}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!create\+Q\+U\+E\+UE@{create\+Q\+U\+E\+UE}}
+\index{create\+Q\+U\+E\+UE@{create\+Q\+U\+E\+UE}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{create\+Q\+U\+E\+U\+E()}{createQUEUE()}}
+{\footnotesize\ttfamily int message\+\_\+manager\+::create\+Q\+U\+E\+UE (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Method for creating the message queue. 
+
+This method shall be used by the daemon only Erase the \char`\"{}.\+json\char`\"{} ending and create the message queue name for unambiguous identification
+
+Remove previous message queue
+
+Create message queues \mbox{\Hypertarget{classmessage__manager_ad6d2784240bffb39dc7e2dae9d6b0751}\label{classmessage__manager_ad6d2784240bffb39dc7e2dae9d6b0751}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!destroy\+Q\+U\+E\+UE@{destroy\+Q\+U\+E\+UE}}
+\index{destroy\+Q\+U\+E\+UE@{destroy\+Q\+U\+E\+UE}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{destroy\+Q\+U\+E\+U\+E()}{destroyQUEUE()}}
+{\footnotesize\ttfamily int message\+\_\+manager\+::destroy\+Q\+U\+E\+UE (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Method for destroying the message queues. 
+
+This method shall be used by the daemon only Erase the \char`\"{}.\+json\char`\"{} ending and create the message queue name for unambiguous identification \mbox{\Hypertarget{classmessage__manager_a44006bd0a6a168cb40a81dcb1b81aaeb}\label{classmessage__manager_a44006bd0a6a168cb40a81dcb1b81aaeb}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!open\+Q\+U\+E\+UE@{open\+Q\+U\+E\+UE}}
+\index{open\+Q\+U\+E\+UE@{open\+Q\+U\+E\+UE}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{open\+Q\+U\+E\+U\+E()}{openQUEUE()}}
+{\footnotesize\ttfamily int message\+\_\+manager\+::open\+Q\+U\+E\+UE (\begin{DoxyParamCaption}\item[{string}]{filename }\end{DoxyParamCaption})}
+
+
+
+Method for opening the message queue. 
+
+This method shall be used by the receiving processes only because the daemon will create the queues Erase the \char`\"{}.\+json\char`\"{} ending and create the message queue name for unambiguous identification
+
+can throw exceptions when queue isnt already created \mbox{\Hypertarget{classmessage__manager_a186a0f3b9e4e0a34a26f57f118a9dad7}\label{classmessage__manager_a186a0f3b9e4e0a34a26f57f118a9dad7}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!receive\+\_\+msg@{receive\+\_\+msg}}
+\index{receive\+\_\+msg@{receive\+\_\+msg}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{receive\+\_\+msg()}{receive\_msg()}}
+{\footnotesize\ttfamily int message\+\_\+manager\+::receive\+\_\+msg (\begin{DoxyParamCaption}\item[{unsigned int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Receive a message. 
+
+The timed receive is handled by the B\+O\+O\+ST library and is implemented by a mutex with condition \mbox{\Hypertarget{classmessage__manager_a1f802ec26eed0834f69988f43f194273}\label{classmessage__manager_a1f802ec26eed0834f69988f43f194273}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!send\+\_\+msg@{send\+\_\+msg}}
+\index{send\+\_\+msg@{send\+\_\+msg}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{send\+\_\+msg()}{send\_msg()}}
+{\footnotesize\ttfamily void message\+\_\+manager\+::send\+\_\+msg (\begin{DoxyParamCaption}\item[{int}]{message,  }\item[{unsigned int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Send a message. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classmessage__manager_a02b3ec0e7e4003a7f8483382e0b9d813}\label{classmessage__manager_a02b3ec0e7e4003a7f8483382e0b9d813}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!msgque\+R\+E\+C\+E\+I\+VE@{msgque\+R\+E\+C\+E\+I\+VE}}
+\index{msgque\+R\+E\+C\+E\+I\+VE@{msgque\+R\+E\+C\+E\+I\+VE}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{msgque\+R\+E\+C\+E\+I\+VE}{msgqueRECEIVE}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$message\+\_\+queue$>$ message\+\_\+manager\+::msgque\+R\+E\+C\+E\+I\+VE\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classmessage__manager_a587e012eba883e294532f4d28bd54a47}\label{classmessage__manager_a587e012eba883e294532f4d28bd54a47}} 
+\index{message\+\_\+manager@{message\+\_\+manager}!msgque\+S\+E\+ND@{msgque\+S\+E\+ND}}
+\index{msgque\+S\+E\+ND@{msgque\+S\+E\+ND}!message\+\_\+manager@{message\+\_\+manager}}
+\subsubsection{\texorpdfstring{msgque\+S\+E\+ND}{msgqueSEND}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$message\+\_\+queue$>$ message\+\_\+manager\+::msgque\+S\+E\+ND\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/includes/\hyperlink{message__manager_8h}{message\+\_\+manager.\+h}\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/\hyperlink{message__manager_8cpp}{message\+\_\+manager.\+cpp}\end{DoxyCompactItemize}

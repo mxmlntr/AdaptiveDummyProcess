@@ -1,0 +1,11 @@
+<map id="/home/visxim/CLionProjects/AdaptiveDummyProcess/includes/data_storage.h" name="/home/visxim/CLionProjects/AdaptiveDummyProcess/includes/data_storage.h">
+<area shape="rect" id="node2" href="$checksum__manager_8h.html" title="Header of checksum_manager for checking the integrity of the data. " alt="" coords="311,109,534,165"/>
+<area shape="rect" id="node5" href="$deserializer_8h.html" title="Header of deserializer for deserializing the parsed configuration data. " alt="" coords="558,109,781,165"/>
+<area shape="rect" id="node7" href="$message__manager_8h.html" title="Header of message_manager for managing the synchronization between processes. " alt="" coords="805,109,1027,165"/>
+<area shape="rect" id="node9" href="$shared__memory_8h.html" title="/home/visxim/CLionProjects\l/AdaptiveDummyProcess/includes\l/shared_memory.h" alt="" coords="1053,109,1275,165"/>
+<area shape="rect" id="node3" href="$checksum__manager_8cpp.html" title="Checksum_manager for checking the integrity of the data. " alt="" coords="5,213,240,269"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title="main of the AdaptiveDummyProcess " alt="" coords="555,221,783,262"/>
+<area shape="rect" id="node6" href="$deserializer_8cpp.html" title="Deserializer for deserializing the parsed configuration data. " alt="" coords="264,221,531,262"/>
+<area shape="rect" id="node8" href="$message__manager_8cpp.html" title="Message_manager for managing the synchronization between processes. " alt="" coords="807,213,1035,269"/>
+<area shape="rect" id="node10" href="$shared__memory_8cpp.html" title="/home/visxim/CLionProjects\l/AdaptiveDummyProcess/shared\l_memory.cpp" alt="" coords="1059,213,1274,269"/>
+</map>

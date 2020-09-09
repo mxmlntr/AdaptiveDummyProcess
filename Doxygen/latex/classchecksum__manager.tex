@@ -1,0 +1,94 @@
+\hypertarget{classchecksum__manager}{}\section{checksum\+\_\+manager Class Reference}
+\label{classchecksum__manager}\index{checksum\+\_\+manager@{checksum\+\_\+manager}}
+
+
+Class of checksum manager for \hyperlink{structCRC}{C\+RC} managment.  
+
+
+
+
+{\ttfamily \#include $<$checksum\+\_\+manager.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classchecksum__manager_a31afd631fa3668a1dfd08ee0b8807d16}{create\+C\+RC} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$C\+R\+Cdata)
+\begin{DoxyCompactList}\small\item\em This method is overloaded for every struct in data\+\_\+storage. \end{DoxyCompactList}\item 
+int \hyperlink{classchecksum__manager_a613cc124da07b2f7d002eefb2065a2e3}{create\+C\+RC} (\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$C\+R\+Cdata)
+\begin{DoxyCompactList}\small\item\em Function for creating the checksum. \end{DoxyCompactList}\item 
+int \hyperlink{classchecksum__manager_a14eeba6bf4d2ad333c227339bd453a72}{check\+C\+RC} (\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$C\+R\+Cdata)
+\begin{DoxyCompactList}\small\item\em Function for checking the checksum. \end{DoxyCompactList}\item 
+int \hyperlink{classchecksum__manager_a74f8d881aee7981cc60b2d169915bc4e}{check\+C\+RC} (\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$C\+R\+Cdata)
+\begin{DoxyCompactList}\small\item\em Function for checking the checksum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class of checksum manager for \hyperlink{structCRC}{C\+RC} managment. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classchecksum__manager_a14eeba6bf4d2ad333c227339bd453a72}\label{classchecksum__manager_a14eeba6bf4d2ad333c227339bd453a72}} 
+\index{checksum\+\_\+manager@{checksum\+\_\+manager}!check\+C\+RC@{check\+C\+RC}}
+\index{check\+C\+RC@{check\+C\+RC}!checksum\+\_\+manager@{checksum\+\_\+manager}}
+\subsubsection{\texorpdfstring{check\+C\+R\+C()}{checkCRC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int checksum\+\_\+manager\+::check\+C\+RC (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{C\+R\+Cdata }\end{DoxyParamCaption})}
+
+
+
+Function for checking the checksum. 
+
+Needs to be overloaded for different data structures Compare the received checksum with the self calculated Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classchecksum__manager_a14eeba6bf4d2ad333c227339bd453a72_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classchecksum__manager_a74f8d881aee7981cc60b2d169915bc4e}\label{classchecksum__manager_a74f8d881aee7981cc60b2d169915bc4e}} 
+\index{checksum\+\_\+manager@{checksum\+\_\+manager}!check\+C\+RC@{check\+C\+RC}}
+\index{check\+C\+RC@{check\+C\+RC}!checksum\+\_\+manager@{checksum\+\_\+manager}}
+\subsubsection{\texorpdfstring{check\+C\+R\+C()}{checkCRC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int checksum\+\_\+manager\+::check\+C\+RC (\begin{DoxyParamCaption}\item[{\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$}]{C\+R\+Cdata }\end{DoxyParamCaption})}
+
+
+
+Function for checking the checksum. 
+
+Needs to be overloaded for different data structures Process all bytes of the struct
+
+Compare the received checksum with the self calculated \mbox{\Hypertarget{classchecksum__manager_a31afd631fa3668a1dfd08ee0b8807d16}\label{classchecksum__manager_a31afd631fa3668a1dfd08ee0b8807d16}} 
+\index{checksum\+\_\+manager@{checksum\+\_\+manager}!create\+C\+RC@{create\+C\+RC}}
+\index{create\+C\+RC@{create\+C\+RC}!checksum\+\_\+manager@{checksum\+\_\+manager}}
+\subsubsection{\texorpdfstring{create\+C\+R\+C()}{createCRC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int checksum\+\_\+manager\+::create\+C\+RC (\begin{DoxyParamCaption}\item[{\hyperlink{structUMGR__s}{U\+M\+G\+R\+\_\+s} $\ast$}]{C\+R\+Cdata }\end{DoxyParamCaption})}
+
+
+
+This method is overloaded for every struct in data\+\_\+storage. 
+
+Function for creating the checksum.
+
+Needs to be overloaded for different data structures Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classchecksum__manager_a31afd631fa3668a1dfd08ee0b8807d16_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classchecksum__manager_a613cc124da07b2f7d002eefb2065a2e3}\label{classchecksum__manager_a613cc124da07b2f7d002eefb2065a2e3}} 
+\index{checksum\+\_\+manager@{checksum\+\_\+manager}!create\+C\+RC@{create\+C\+RC}}
+\index{create\+C\+RC@{create\+C\+RC}!checksum\+\_\+manager@{checksum\+\_\+manager}}
+\subsubsection{\texorpdfstring{create\+C\+R\+C()}{createCRC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int checksum\+\_\+manager\+::create\+C\+RC (\begin{DoxyParamCaption}\item[{\hyperlink{structEXMPLE__s}{E\+X\+M\+P\+L\+E\+\_\+s} $\ast$}]{C\+R\+Cdata }\end{DoxyParamCaption})}
+
+
+
+Function for creating the checksum. 
+
+Needs to be overloaded for different data structures Process all bytes of the struct 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/includes/\hyperlink{checksum__manager_8h}{checksum\+\_\+manager.\+h}\item 
+/home/visxim/\+C\+Lion\+Projects/\+Adaptive\+Dummy\+Process/\hyperlink{checksum__manager_8cpp}{checksum\+\_\+manager.\+cpp}\end{DoxyCompactItemize}
