@@ -28,6 +28,7 @@
 
 using namespace std;
 
+// source: https://stackoverflow.com/questions/63225515/boostcrc-creating-checksum-with-process-block-method
 struct CRC {
     boost::crc_32_type crc;
     void operator()(string_view s)
